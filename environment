@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 export CONTECO_LABEL="external.confluent-cc - ContEco"
-export CONTECO_DESCRIPTION="Confluent Kafka image with ContEco external prerequisites installed."
+export CONTECO_DESCRIPTION="Confluent Control Center image with ContEco external prerequisites installed."
 
 export CONTECO_TYPE="external"
 export CONTECO_NAME="confluent-cc"
