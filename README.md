@@ -10,4 +10,4 @@ See `conteco.docs.overview` for more information on the ContEco ecosystem.
 
 ## Tags
 
-* 5.4.0 (latest)  
+* 6.0.0 (latest)  

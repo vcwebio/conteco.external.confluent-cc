@@ -1,11 +1,12 @@
 ##### BEGIN external-mapped/Dockerfile/image-header #####
-FROM confluentinc/cp-enterprise-control-center:5.4.0
+FROM confluentinc/cp-enterprise-control-center:6.0.0
 ##### END external-mapped/Dockerfile/image-header #####
 
 ##### BEGIN image/Dockerfile/build-instructions #####
 USER root
-RUN apt-get update && apt-get install -y --force-yes gettext && rm -rf /var/cache/apt/*
-RUN wget -O jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 && chmod +x ./jq && cp jq /usr/bin
+RUN yum install -y gettext && \
+    yum install -y jq && \
+    rm -rf /var/cache/yum/*
 ##### END image/Dockerfile/build-instructions #####
 
 ##### BEGIN external/Dockerfile/conteco #####
@@ -18,8 +19,8 @@ LABEL io.vcweb.schema-version="1.0" \
       io.vcweb.ecosystem="conteco" \
       io.vcweb.type="external" \
       io.vcweb.name="confluent_cc" \
-      io.vcweb.tag="5.4.0" \
-      io.vcweb.base="confluentinc/cp-enterprise-control-center:5.4.0" \
+      io.vcweb.tag="6.0.0" \
+      io.vcweb.base="confluentinc/cp-enterprise-control-center:6.0.0" \
       io.vcweb.build="external-mapped" \
       io.vcweb.label="external.confluent_cc - ContEco" \
       io.vcweb.description="Confluent Control Center image with ContEco external prerequisites installed." \
